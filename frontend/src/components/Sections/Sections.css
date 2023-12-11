@@ -1,0 +1,33 @@
+Section {
+  align-items: center;
+  box-shadow: 10px 10px var(--Quaternary);
+  border: 3px solid var(--Quaternary);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 460 px;
+  justify-content: flex-start;
+  margin: 15px;
+  margin-top: 15px;
+  position: relative;
+  width: 300px;
+  height: 470px;
+  background-color: var(--Light);
+  opacity: 100%;
+}
+section img {
+  border-radius: 20px 20px 0px 0px;
+  object-fit: cover;
+  width: 295px;
+}
+section p,
+h2 {
+  text-align: center;
+  padding: 15px;
+  color: var(--Dark);
+}
+@media only screen and (max-width: 700px) {
+  .ImageContainer {
+    display: none;
+  }
+}

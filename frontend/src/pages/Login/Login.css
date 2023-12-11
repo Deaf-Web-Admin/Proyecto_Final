@@ -1,0 +1,67 @@
+main {
+  justify-content: center;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 300px;
+  flex-wrap: nowrap;
+  gap: 10px;
+  background-color: var(--Light);
+  opacity: 90%;
+  border-radius: 30px;
+}
+input {
+  text-align: center;
+  width: 400px;
+  height: 50px;
+  font-size: medium;
+  background-color: var(--Light);
+  color: var(--Dark);
+  font-weight: 700;
+}
+.ButtonContainer {
+  width: 500px;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+}
+.ButtonContainer button {
+  width: 196px;
+}
+select {
+  text-align: center;
+  width: 400px;
+  height: 50px;
+}
+.BotonRegistro {
+  width: 400px;
+}
+@media only screen and (max-width: 800px) {
+  main {
+    justify-content: flex-start;
+  }
+  form {
+    width: 95vw;
+    gap: 2px;
+    border-radius: 20px;
+  }
+  .ButtonContainer {
+    max-width: 350px;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+  }
+  .ButtonContainer button {
+    width: 300px;
+  }
+  input {
+    width: 300px;
+  }
+}

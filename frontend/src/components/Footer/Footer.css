@@ -1,0 +1,15 @@
+footer {
+  height: 5vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--Secondary);
+  color: var(--Quaternary);
+}
+footer a {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--Quaternary);
+}

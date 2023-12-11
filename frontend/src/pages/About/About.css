@@ -1,0 +1,82 @@
+.GlobalContainerAbout {
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.Table {
+  display: flex;
+  flex-direction: column;
+}
+
+.About img {
+  width: 550px;
+  height: 300px;
+  object-fit: cover;
+  object-position: left center;
+  border: 2px solid greenyellow;
+  border-radius: 20px;
+  box-shadow: 10px 10px greenyellow;
+}
+.Container1 {
+  width: 550px;
+  height: 300px;
+  box-shadow: 20px 20px black;
+  border-radius: 20px;
+}
+
+.Container2 {
+  width: 550px;
+  height: 300px;
+  border-radius: 30px;
+  box-shadow: 30px 30px white;
+  margin-bottom: 50px;
+}
+
+.TR {
+  flex-direction: column;
+  width: 600px;
+  text-align: center;
+  width: 400px;
+}
+.TD {
+  width: auto;
+}
+h2 {
+  color: var(--Secondary);
+}
+@media only screen and (max-width: 800px) {
+  .GlobalContainerAbout {
+    width: 100vw;
+    height: 80vh;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  .About {
+    width: 100vw;
+    height: 100vh;
+    margin-top: 60px;
+  }
+  .About img {
+    width: 95vw;
+    height: auto;
+  }
+  .Container2,
+  .Container1 {
+    width: 95vw;
+    height: auto;
+    margin-bottom: 0px;
+    margin-top: 0px;
+  }
+  .TR {
+    margin-top: 20px;
+  }
+  .BotonEnAbout {
+    position: absolute;
+    bottom: 5px;
+  }
+}

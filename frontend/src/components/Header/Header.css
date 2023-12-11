@@ -1,0 +1,33 @@
+header {
+  height: 13vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+  background-color: var(--Secondary);
+  color: var(--Quaternary);
+  width: 100vw;
+  gap: 50px;
+}
+header img {
+  width: 100px;
+}
+.avatar {
+  height: 35px;
+  width: 35px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+@media only screen and (max-width: 800px) {
+  h1 {
+    font-size: x-large;
+  }
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
+  header img {
+    display: none;
+  }
+}

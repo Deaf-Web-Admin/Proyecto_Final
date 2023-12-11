@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --Primary: #3ba3ef;
+  --Secondary: #0f161e;
+  --Tertiary: #c34548;
+  --Quaternary: #f3c24f;
+  --Warning: red;
+  --Continua: green;
+  --Dark: Black;
+  --Light: White;
+  font-family: 'Roboto', sans-serif;
+}
+body {
+  background-color: var(--Tertiary);
+  color: var(--Light);
+  background-image: url('');
+  background-position-y: 10vh;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-size: 100vw;
+}
+main {
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  background-color: var(--Tertiary);
+  color: var(--Light);
+}
