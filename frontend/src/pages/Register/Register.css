@@ -59,4 +59,7 @@ main label {
   main label {
     max-width: 300px;
   }
+  select {
+    max-width: 300px;
+  }
 }

@@ -1,5 +1,5 @@
 {
-  "name": "16.backend",
+  "name": "backend_proyecto_final",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,7 +8,7 @@
     "dev": "nodemon index.js"
   },
   "keywords": [],
-  "author": "Antonio Rosales Martínez <antoniorosalesmartinez90@gmail.com>",
+  "author": "Grupo 1",
   "license": "MIT",
   "dependencies": {
     "bcrypt": "^5.1.1",

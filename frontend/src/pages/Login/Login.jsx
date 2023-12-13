@@ -24,8 +24,13 @@ const Login = () => {
     API.post('/users/login', body).then((res) => {
       login(
         {
+          correo: res.data.correo,
+          tipo: res.data.tipo,
           username: res.data.username,
           avatar: res.data.avatar,
+          check1: res.data.check1,
+          check2: res.data.check2,
+          createdAt: res.data.createdAt,
         },
         res.data.token,
       );
@@ -47,7 +52,6 @@ const Login = () => {
             ref={usernameRef}
             placeholder="Su Nombre"
           />
-          <label htmlFor="password">Password</label>
           <input
             id="password"
             type="password"

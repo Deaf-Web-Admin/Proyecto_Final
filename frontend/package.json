@@ -1,9 +1,9 @@
 {
-  "name": "frontend",
+  "name": "frontend_proyecto_final",
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
     "lint:fix": "eslint ./src --ext .jsx,.js, --quiet --fix --ignore-path ./.gitignore",
     "lint:format": "prettier --log-level warn --write \"./**/*.{js,jsx,css,md,json}\" ",

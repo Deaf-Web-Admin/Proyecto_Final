@@ -1,44 +1,35 @@
 import './Register.css';
 
-import { useContext, useRef } from 'react';
+import { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import API from '../../API/API';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
-import { UserContext } from '../../context/userContext';
 
 const Register = () => {
-  const { login } = useContext(UserContext);
-
   const usernameRef = useRef(null);
   const passwordRef = useRef(null);
+  const correoRef = useRef(null);
   const avatarRef = useRef(null);
+  const tipoRef = useRef(null);
+  const navigate = useNavigate();
 
   const handleSubmit = (ev) => {
     ev.preventDefault();
     const body = new FormData();
+    body.append('correo', correoRef.current.value);
+    body.append('tipo', tipoRef.current.value);
     body.append('username', usernameRef.current.value);
     body.append('password', passwordRef.current.value);
     body.append('avatar', avatarRef.current.files[0]);
 
     API.post('/users/register', body, {
       headers: { 'Content-Type': 'multipart/form-data' },
-    }).then(() => {
-      const loginBody = new FormData();
-      loginBody.append('username', usernameRef.current.value);
-      loginBody.append('password', passwordRef.current.value);
-
-      API.post('/users/login', loginBody).then((res) => {
-        login(
-          {
-            username: res.data.username,
-            avatar: res.data.avatar,
-          },
-          res.data.token,
-        );
-      });
     });
+    navigate('/login');
   };
+
   return (
     <>
       <Header />
@@ -58,8 +49,19 @@ const Register = () => {
             minLength={8}
             required
             ref={passwordRef}
+            placeholder="Su Clave"
+          />
+          <input
+            id="correo"
+            type="email"
+            required
+            ref={correoRef}
             placeholder="Su Correo"
           />
+          <select id="tipo" ref={tipoRef}>
+            <option>Voluntario</option>
+            <option>Solicitante</option>
+          </select>
           <label htmlFor="avatar" className="upload">
             Imagen de Perfil
           </label>

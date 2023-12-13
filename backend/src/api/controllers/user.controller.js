@@ -27,9 +27,14 @@ const login = async (req, res, next) => {
     if (bcrypt.compareSync(req.body.password, existingUser.password)) {
       const token = generateToken(existingUser._id, existingUser.username);
       return res.status(200).json({
+        correo: existingUser.correo,
+        tipo: existingUser.tipo,
         username: existingUser.username,
         id: existingUser._id,
         avatar: existingUser.avatar,
+        check1: existingUser.check1,
+        check2: existingUser.check2,
+        createdAt: existingUser.createdAt.toLocaleDateString(),
         token: token,
       });
     } else {
