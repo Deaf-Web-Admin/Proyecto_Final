@@ -4,7 +4,7 @@ const { CloudinaryStorage } = require('multer-storage-cloudinary')
 
 const storage = new CloudinaryStorage({
   cloudinary,
-  folder: 'moviescharacters',
+  folder: 'inclusionperenne',
   allowedFormats: ['jpg', 'png', 'jpeg', 'gif'],
 })
 

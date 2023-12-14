@@ -7,14 +7,12 @@ import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 
 const Anunciosv1 = () => {
-  const [postList, setPostlist] = useState([]);
-  const getPosts = async () => {
-    const Posts = await API.get('/post');
-    setPostlist(Posts.data);
-  };
+  const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    getPosts();
+    API.get('/posts').then((res) => {
+      setPosts(res.data);
+    });
   }, []);
 
   return (
@@ -22,11 +20,12 @@ const Anunciosv1 = () => {
       <Header />
       <main>
         <div className="GlobalPostContainer">
-          {postList.map((post) => (
-            <div className="PostContainer" key={post._ID}>
+          {posts.map((post) => (
+            <div className="PostContainer" key={post._id}>
               <h2>{post.titulo}</h2>
-              <img src={post.imagen} alt={post.title} />
+              <img src={post.cover} alt={post.title} />
               <p className="Parrafo">{post.contenido}</p>
+              <button>Contactar</button>
             </div>
           ))}
         </div>
@@ -36,4 +35,3 @@ const Anunciosv1 = () => {
   );
 };
 export default Anunciosv1;
-// <p className='Parrafo'>Por: {post.usuario}</p>

@@ -1,11 +1,25 @@
 import './Register.css';
-
 import { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import Swal from 'sweetalert2';
 import API from '../../API/API';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
+
+const modalmsg2 = () => {
+  Swal.fire({
+    title: 'Creacion Exitosa',
+    text: 'Perfecto!! creamos tu usuario, ahora por favor, logueate',
+    imageUrl: 'https://siscapem.files.wordpress.com/2014/10/aplausos-4.gif',
+    imageWidth: 200,
+    imageHeight: 100,
+    background: '#3ba3ef',
+    color: 'Black',
+    confirmButtonColor: '#c34548',
+    didOpen: true,
+    imageAlt: 'dos manos aplaudiendo',
+  });
+};
 
 const Register = () => {
   const usernameRef = useRef(null);
@@ -27,6 +41,7 @@ const Register = () => {
     API.post('/users/register', body, {
       headers: { 'Content-Type': 'multipart/form-data' },
     });
+    modalmsg2();
     navigate('/login');
   };
 
@@ -35,6 +50,7 @@ const Register = () => {
       <Header />
       <main>
         <form onSubmit={handleSubmit}>
+        <h2>Darse de alta</h2>
           <input
             id="username"
             type="text"

@@ -30,7 +30,7 @@ export const UserContextProvider = ({ children }) => {
     localStorage.removeItem('token');
     setUser(null);
     setToken(null);
-    navigate('/login');
+    navigate('/');
   };
 
   return (

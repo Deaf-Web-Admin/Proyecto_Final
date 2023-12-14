@@ -1,5 +1,3 @@
-//https://github.com/lethamburn/node_videogames/tree/master
-
 const express = require("express");
 const dotenv = require("dotenv");
 const cors = require("cors");
@@ -21,10 +19,8 @@ server.use(
 );
 
 //Routes
-const CharacterRouter = require("./src/api/routes/character.routes");
-server.use("/characters", CharacterRouter);
-const MovieRouter = require("./src/api/routes/movie.routes");
-server.use("/movies", MovieRouter);
+const PostRouter = require("./src/api/routes/post.routes");
+server.use("/posts", PostRouter);
 const UserRouter = require("./src/api/routes/user.routes");
 server.use("/users", UserRouter);
 
