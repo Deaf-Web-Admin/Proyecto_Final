@@ -22,8 +22,6 @@ const Login = () => {
     body.append('password', passwordRef.current.value);
 
     API.post('/users/login', body).then((res) => {
-const ConvertirCorreodeASCIIaBase64=btoa(res.data.correo)
-      localStorage.setItem("Dataw",ConvertirCorreodeASCIIaBase64)
       login(
         {
           correo: res.data.correo,
@@ -44,7 +42,7 @@ const ConvertirCorreodeASCIIaBase64=btoa(res.data.correo)
       <Header />
       <main>
         <form onSubmit={handleSubmit}>
-        <h2>Login</h2>
+          <h2>Login</h2>
           <label htmlFor="username">Username</label>
           <input
             id="username"

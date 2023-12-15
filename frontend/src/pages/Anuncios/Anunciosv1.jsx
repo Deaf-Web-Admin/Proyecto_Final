@@ -14,7 +14,7 @@ const Anunciosv1 = () => {
       setPosts(res.data);
     });
   }, []);
-
+  const comprobacionLocalStorage = localStorage.getItem('DataW');
   return (
     <>
       <Header />
@@ -25,7 +25,7 @@ const Anunciosv1 = () => {
               <h2>{post.titulo}</h2>
               <img src={post.cover} alt={post.title} />
               <p className="Parrafo">{post.contenido}</p>
-              <button>Contactar</button>
+              {comprobacionLocalStorage !== null ? <button>Contactar</button> : <></>}
             </div>
           ))}
         </div>

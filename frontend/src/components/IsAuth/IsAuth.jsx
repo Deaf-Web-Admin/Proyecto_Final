@@ -9,7 +9,7 @@ const IsAuth = ({ children }) => {
   if (user !== null) {
     return children;
   } else {
-    return <Navigate to="/" />;
+    <Navigate to="/" />;
   }
 };
 

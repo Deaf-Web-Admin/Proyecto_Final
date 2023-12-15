@@ -24,7 +24,7 @@ const Navigator = () => {
       {user !== null ? (
         <>
           <li>
-            <NavLink onClick={logout} className="logoutlink">
+            <NavLink onClick={logout} className="logoutlink" NavLink to="/">
               Logout
             </NavLink>
           </li>

@@ -1,7 +1,9 @@
 import './Register.css';
+
 import { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+
 import API from '../../API/API';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
@@ -50,7 +52,7 @@ const Register = () => {
       <Header />
       <main>
         <form onSubmit={handleSubmit}>
-        <h2>Darse de alta</h2>
+          <h2>Darse de alta</h2>
           <input
             id="username"
             type="text"

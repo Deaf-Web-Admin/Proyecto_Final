@@ -1,7 +1,9 @@
 import './Profile.css';
-import { useContext,useRef } from 'react';
-import { NavLink,useNavigate } from 'react-router-dom';
+
+import { useContext, useRef } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+
 import API from '../../API/API';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
@@ -25,10 +27,14 @@ const Profile = () => {
   const categoriaRef = useRef(null);
   const contenidoRef = useRef(null);
   const coverRef = useRef(null);
-  const contactoRef = localStorage.getItem("Dataw")
+  const contactoRef = localStorage.getItem('Dataw');
   const navigate = useNavigate();
 
   const { user } = useContext(UserContext);
+  if (user.tipo == 'Solicitante') {
+    const ConvertirCorreodeASCIIaBase64 = btoa(user.correo);
+    localStorage.setItem('DataW', user.correo);
+  }
   const handleSubmit = (ev) => {
     ev.preventDefault();
     const body = new FormData();
@@ -36,13 +42,13 @@ const Profile = () => {
     body.append('categoria', categoriaRef.current.value);
     body.append('contenido', contenidoRef.current.value);
     body.append('cover', coverRef.current.files[0]);
-    body.append("contacto",contactoRef);
+    body.append('contacto', contactoRef);
 
     API.post('/posts/', body, {
       headers: { 'Content-Type': 'multipart/form-data' },
     });
     modalmsg3();
-    navigate('/Anunciosv1');
+    navigate('/profile');
   };
   return (
     <>
@@ -66,16 +72,16 @@ const Profile = () => {
           {user.tipo == 'Voluntario' ? (
             <>
               <form onSubmit={handleSubmit}>
-                <input type="text" placeholder="Titulo" ref={tituloRef}/>
+                <input type="text" placeholder="Titulo" ref={tituloRef} />
                 <select ref={categoriaRef}>
                   <option>Personas Mayores</option>
                   <option>Discapacitados</option>
                 </select>
-                <input type="text" placeholder="Su Anuncio" ref={contenidoRef}/>{' '}
+                <input type="text" placeholder="Su Anuncio" ref={contenidoRef} />{' '}
                 <label htmlFor="avatar" className="upload">
                   Imagen
                 </label>
-                <input type="file" id="avatar"ref={coverRef}/>
+                <input type="file" id="avatar" ref={coverRef} />
                 <button type="submit">Publicar</button>
               </form>
             </>
